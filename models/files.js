@@ -22,7 +22,8 @@ const fileSchema = new mongoose.Schema({
 /*******SETTINGS FOR UPLOADING FILE USING MULTER****************/
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "..", FILES_PATH));//exact path where files need to uplaod
+      cb(null, path.join(__dirname, "..", FILES_PATH));
+      // where files need to uplaod
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now());
